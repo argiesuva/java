@@ -14,7 +14,8 @@ class bunki {
     	int in1 = new java.util.Scanner(System.in).nextInt();
 
 		// 処理：記号に応じて計算
-		
+		// ヒント：kigouが+かどうかのif文は以下のとおり
+		//   if (kigou.equals("+"))
 		
 		// 出力：計算結果を出力
 		// 「数値1 計算記号 数値2 = 答え」
