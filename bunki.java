@@ -16,7 +16,10 @@ class bunki {
 		// 処理：記号に応じて計算
 		// ヒント：kigouが+かどうかのif文は以下のとおり
 		//   if (kigou.equals("+"))
-		
+		if (kigou.equals("+"))
+			kotae = in0 + in1;
+		if (kigou.equals("-"))    
+		    kotae = in0 - in1;
 		// 出力：計算結果を出力
 		// 「数値1 計算記号 数値2 = 答え」
 		System.out.println("" + in0 + kigou + in1 + "=" + kotae);
