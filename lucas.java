@@ -16,12 +16,16 @@ class lucas {
 		hai[0] = new BigInteger("2");
 		//// 1項目の初期化
 		hai[1] = new BigInteger("1");
+		ryuka = ryuka.add(hai[1]);
 		//// 2～100項の計算
 		///// 2～100までのループをfor文で書く
 		for (int i=2 ; i<=100 ; i++){
-			hai[i] = hai[i-1] + hai[i-2];
+			// やりたいこと：n = n + one;
+			// BigIntegerに書き換えると
+			//          n = n.add(one);
+			hai[i] = hai[i-1].add(hai[i-2]);
 			// 算出した値を合計する変数に足す
-			ryuka = ryuka + hai[i];
+			ryuka = ryuka.add(hai[i]);
 			// 足した値を表示
 			System.out.println(ryuka);
 		}
