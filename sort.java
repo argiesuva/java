@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.io.*;
 
-class sum {
+class sort {
 	public static void main(String args[])
 	{
 		// 変数aをtensu.txtにファイル出力する
@@ -27,6 +27,47 @@ class sum {
             
 			// ファイルを閉じる
 			br.close();
+			
+			// 並び替え
+			// 0 1 2 3番目
+			// 5 2 3 1
+			// >0,1=並び替え
+			// 2 5 3 1
+			// >1,2=並び替え
+			// 2 3 5 1
+			// >2,3=並び替え
+			// 2 3 1 5
+			// -----------
+			// >0,1=そのまま
+			// >1,2=並びかえ
+			// 2 1 3 5
+			// -----------
+			// >0,1=並び替え
+			// 1 2 3 5
+			// ------------
+			// データ個数＝4
+			// i:j
+			// 0:0～2=4-2-0=4-2-i
+			// 1:0～1=4-2-1=4-2-i
+			// 2:0   =4-2-2=4-2-i
+			// 以上から、iは0～データ個数-2
+			// jは、0～データ個数-2-i
+			for(int i=0;i<idatas.length-1;i++)
+			{
+				for(int j=0;j<idatas.length-1-i;j++)
+				{
+					if (idatas[j]>idatas[j+1])
+					{
+						int w = idatas[j];
+						idatas[j]=idatas[j+1];
+						idatas[j+1]=w;
+					}
+				}
+			}
+			for(int i=0 ; i<idatas.length;i++) {
+				System.out.print(idatas[i]+",");
+			}
+			
 		} catch(Exception e)
 		{
 			System.out.println(e.toString());
